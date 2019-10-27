@@ -268,8 +268,10 @@ input[type="email"]::-webkit-input-placeholder {
 	margin: 27px 27px 0 27px;	 /*margin: 0*/
 }
 
-.button__card {	
-    border: 3px solid silver;
+.button__card {
+    position:relative;
+    display:inline-block;
+    border: 2px solid silver;
    	background: #fff; 
    	border-bottom:0;
     border-top: 0;
@@ -283,15 +285,33 @@ input[type="email"]::-webkit-input-placeholder {
 	transition: 0.3s;
 	background: transparent;
 }
-
 .button__card:hover {
-	border: 3px	solid silver;
-	border-width: 25% 0 25% 0;
+	color: silver;
 	border-left: 0;
 	border-right: 0;
-	border-top: 25%;
-	border-bottom: 25%;
-	opacity: 0.6;
+	border-top: 0;
+	border-bottom: 0;
+}      
+.button__card:hover:before {
+	 content:"";
+	 position:absolute;
+	 border-top-right-bottom-left: 0;
+	 top:0px;
+	 left:50%;
+	 width:30%;
+	 height:2px;
+	 margin-left:-15%;
+	 background:silver           
+}
+.button__card:hover:after{
+    content:"";
+    position:absolute;
+   	bottom:0;
+    left:50%;
+   	width:30%;
+    height:2px;
+  	margin-left:-15%;
+   	background:silver           
 }
 
 .card__footer h1 {
